@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/mlops-for-all/helm-charts.git
-    chart: "mlrflow"
+    chart: "mlflow"
     targetRevision: "3"
     helm:
       valueFiles:
