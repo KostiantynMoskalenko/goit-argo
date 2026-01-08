@@ -13,7 +13,7 @@ spec:
       valueFiles: values/values_airflow.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: infra-tools # куди деплоїти застосунок
+    namespace: application # куди деплоїти застосунок
   syncPolicy:
     automated:
       prune: true
