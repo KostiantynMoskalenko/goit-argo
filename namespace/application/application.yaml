@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: airflow
+  name: mlflow
   namespace: infra-tools
 spec:
   project: default
   source:
-    repoURL: https://github.com/helm/charts.git
-    chart: "airflow"
+    repoURL: https://github.com/bitnomee/mlflow
+    chart: "mlrflow"
     targetRevision: "7.13"
     helm:
       valueFiles:
-        - stable/airflow/values.yaml
+        - charts/mlflow/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: infra-tools # куди деплоїти застосунок
