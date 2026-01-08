@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/bitnomee/mlflow.git
+    repoURL: https://github.com/mlops-for-all/helm-charts.git
     chart: "mlrflow"
-    targetRevision: "7.13.0"
+    targetRevision: "3"
     helm:
       valueFiles:
-        - https://github.com/bitnomee/mlflow/blob/main/charts/mlflow/values.yaml
+        - /mlflow/chart/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: infra-tools # куди деплоїти застосунок
