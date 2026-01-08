@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/bitnomee/mlflow.git
     chart: "mlrflow"
-    targetRevision: "7.13"
+    targetRevision: "7.13.0"
     helm:
       valueFiles:
         - charts/mlflow/values.yaml
