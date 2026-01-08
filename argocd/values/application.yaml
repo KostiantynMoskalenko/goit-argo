@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/helm/charts.git      
+    repoURL: https://github.com/KostiantynMoskalenko/goit-argo.git      
     chart: "mlflow"    
     targetRevision: "7.13.0"
     helm:
