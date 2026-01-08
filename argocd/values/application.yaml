@@ -14,7 +14,7 @@ spec:
         - values/values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: application # куди деплоїти застосунок
+    namespace: infra-tools # куди деплоїти застосунок
   syncPolicy:
     automated:
       prune: true
