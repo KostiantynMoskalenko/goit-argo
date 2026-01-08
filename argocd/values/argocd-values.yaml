@@ -1,0 +1,11 @@
+server:
+  service:
+    type: ClusterIP
+  extraArgs:
+    - --insecure
+  rbac:
+    create: true
+  config:
+    timeout.reconciliation: 30s
+
+

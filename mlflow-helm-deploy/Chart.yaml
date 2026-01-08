@@ -1,0 +1,7 @@
+apiVersion: v2
+name: mlflow
+version: 0.1.0
+dependencies:
+  - name: mlflow
+    version: "0.7.19"  # Latest stable version as of recent sources
+    repository: "https://community-charts.github.io/helm-charts"
