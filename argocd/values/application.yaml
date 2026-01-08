@@ -14,7 +14,7 @@ spec:
         - values/values_airflow.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: application # куди деплоїти застосунок
+    namespace: lesson7 # куди деплоїти застосунок
   syncPolicy:
     automated:
       prune: true
