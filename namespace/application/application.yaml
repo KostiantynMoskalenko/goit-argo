@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/bitnomee/mlflow
+    repoURL: https://github.com/bitnomee/mlflow.git
     chart: "mlrflow"
     targetRevision: "7.13"
     helm:
