@@ -10,7 +10,7 @@ spec:
     chart: "Airflow Helm Chart"         
     targetRevision: "7.13.0"
     helm:
-      - values/values_airflow.yaml
+      - .namespace/infra-tools/values_airflow.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: infra-tools # куди деплоїти застосунок
