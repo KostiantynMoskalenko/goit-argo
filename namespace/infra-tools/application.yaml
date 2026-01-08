@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/helm/charts.git      
-    chart: "airflow"    
-    targetRevision: "7.13.0"
+    repoURL: https://github.com/helm/charts.git
+    chart: "airflow"
+    targetRevision: "7.13"
     helm:
-      valueFiles: 
+      valueFiles:
         - stable/airflow/values.yaml
   destination:
     server: https://kubernetes.default.svc
