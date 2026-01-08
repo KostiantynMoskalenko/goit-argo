@@ -11,7 +11,7 @@ spec:
     targetRevision: "7.13.0"
     helm:
       valueFiles:
-        - charts/mlflow/values.yaml
+        - https://github.com/bitnomee/mlflow/blob/main/charts/mlflow/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: infra-tools # куди деплоїти застосунок
