@@ -1,0 +1,24 @@
+image:
+  repository: ghcr.io/mlflow/mlflow
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 5000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+# простий демо-режим: sqlite у контейнері, без persistent storage
+mlflow:
+  backendStoreUri: sqlite:///mlflow.db
+  artifactRoot: /mlruns
+
+env: []
+# - name: MLFLOW_S3_ENDPOINT_URL
+#   value: https://s3.amazonaws.com
