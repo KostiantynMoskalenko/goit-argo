@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/bitnomee/charts/tree/main/bitnami/mlflow
     chart: "mlflow"
-    targetRevision: 1.16.1
+    targetRevision: 5.1.17
     helm:
       valueFiles:
         - values.yaml
