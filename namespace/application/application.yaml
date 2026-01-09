@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://community-charts.github.io/helm-charts
+    repoURL: https://github.com/helm/charts
     chart: "mlflow"
-    targetRevision: main
+    targetRevision: master
     helm:
       valueFiles:
         - values.yaml
