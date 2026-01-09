@@ -31,3 +31,7 @@ kubectl get pods -n infra-tools
 Check pods in `mlflow` namespace:
 
 kubectl get pods -n mlflow
+
+## Git repository with application.yaml
+Application and Helm chart: https://github.com/KostiantynMoskalenko/mlflow-helm.git
+Contains application.yaml, Chart.yaml, values.yaml.
