@@ -6,15 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/bitnomee/charts/tree/main/bitnami/mlflow
+    repoURL: https://github.com/KostiantynMoskalenko/mlflow-helm.git
     chart: "mlflow"
-    targetRevision: 5.1.17
+    path: .
+    targetRevision: main
     helm:
+      releaseName: mlflow
       valueFiles:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: infra-tools # куди деплоїти застосунок
+    namespace: mlflow # куди деплоїти застосунок
   syncPolicy:
     automated:
       prune: true
