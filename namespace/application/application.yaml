@@ -6,12 +6,18 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/mlops-for-all/helm-charts/blob/main
+    repoURL: https://github.com/KostiantynMoskalenko/goit-argo.git
     chart: "mlflow"
     targetRevision: "3"
     helm:
-      valueFiles:
-        - /mlflow/chart/values.yaml
+      values:
+        apiVersion: v2
+        name: mlflow
+        version: 0.1.0
+        dependencies:
+          - name: mlflow
+            version: "0.7.19"  # Latest stable version as of recent sources
+            repository: "https://community-charts.github.io/helm-charts"
   destination:
     server: https://kubernetes.default.svc
     namespace: infra-tools # куди деплоїти застосунок
