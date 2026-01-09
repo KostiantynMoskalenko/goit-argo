@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/helm/charts
     chart: "mlflow"
-    targetRevision: master
+    targetRevision: main
     helm:
       valueFiles:
         - values.yaml
