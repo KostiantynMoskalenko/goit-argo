@@ -10,14 +10,8 @@ spec:
     chart: "mlflow"
     targetRevision: "3"
     helm:
-      values:
-        apiVersion: v2
-        name: mlflow
-        version: 0.1.0
-        dependencies:
-          - name: mlflow
-            version: "0.7.18"  # Latest stable version as of recent sources
-            repository: "https://community-charts.github.io/helm-charts"
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: infra-tools # куди деплоїти застосунок
