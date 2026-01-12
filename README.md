@@ -1,4 +1,16 @@
+aws eks update-kubeconfig --region us-east-1 --name cluster1
+
 # MLflow Deployment with ArgoCD on EKS
+# For using 'Secret' run:
+```
+cd argocd
+#cd values	
+#kubectl apply -f secret.yaml
+
+#cd..
+```
+kubectl create namespace infra-tools
+kubectl apply -n infra-tools -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 ## Deploy ArgoCD with terraform:
 ```
@@ -6,8 +18,12 @@
    terraform plan
    terraform apply
 ```
+Force update of ApplicationSet
+kubectl -n infra-tools annotate applicationset namespaces-appset argocd.argoproj.io/application-set-refresh=force --overwrite
 
-## Verify ArgoCD
+Check applications for every folder:
+kubectl -n infra-tools get applications.argoproj.io
+
 Check pods in `infra-tools` namespace:
 ```
 kubectl get pods -n infra-tools
