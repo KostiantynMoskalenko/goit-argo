@@ -31,10 +31,20 @@ spec:
       enabled: true
       persistence:
         enabled: false
-    
-    
-    # MLflow Tracking Server (логи/артефакти не зберігатимуться між рестартами)
-    tracking:
-      persistence:
-        enabled: false
+
+ destination:
+   server: https://kubernetes.default.svc
+   namespace: <target-namespace> # куди деплоїти застосунок
+  syncPolicy:
+   automated:
+    prune: true
+    selfHeal: true
+   syncOptions:
+    - CreateNamespace=true
+     
+     
+     # MLflow Tracking Server (логи/артефакти не зберігатимуться між рестартами)
+     tracking:
+       persistence:
+         enabled: false
     
