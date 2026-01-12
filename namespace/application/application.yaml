@@ -8,7 +8,7 @@ spec:
  source:
   repoURL: <helm-repo-url>   # з ArtifactHub або GitHub Helm repo
   chart: <chart-name>      # назва чарту
-  targetRevision: <chart-version>
+  targetRevision: 5.1.17
   helm:
    # ОБЕРІТЬ ОДИН СПОСІБ:
    # values: |         # ← вставити ваші overrides тут (Варіант A)
