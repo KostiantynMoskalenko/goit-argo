@@ -25,18 +25,7 @@ spec:
     auth:
       enabled: false
     
-    # Вбудована БД PostgreSQL (без диску)
-    postgresql:
-      enabled: true
-      primary:
-        persistence:
-          enabled: false
-      auth:
-        postgresPassword: mlflowpass
-        username: mlflow
-        password: mlflowpass
-        database: mlflowdb
-        
+
     # Вбудоване S3-сховище (MinIO) 
     minio:
       enabled: true
