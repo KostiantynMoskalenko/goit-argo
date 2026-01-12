@@ -34,7 +34,7 @@ spec:
 
  destination:
    server: https://kubernetes.default.svc
-   namespace: <target-namespace> # куди деплоїти застосунок
+   namespace: mlflow # куди деплоїти застосунок
   syncPolicy:
    automated:
     prune: true
