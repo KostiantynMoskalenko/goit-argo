@@ -1,25 +1,51 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mlflow
-  namespace: infra-tools
+ name: mlflow
+ namespace: infra-tools  # де встановлено ArgoCD (напр., infra-tools)
 spec:
-  project: default
-  source:
-    repoURL: https://github.com/KostiantynMoskalenko/mlflow-helm.git
-    chart: "mlflow"
-    path: .
-    targetRevision: main
-    helm:
-      releaseName: mlflow
-      valueFiles:
-        - values.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: mlflow # куди деплоїти застосунок
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+ project: default
+ source:
+  repoURL: https://charts.bitnami.com/bitnami   # з ArtifactHub або GitHub Helm repo
+  chart: mlflow      # назва чарту
+  targetRevision: 5.1.17
+  helm:
+   # ОБЕРІТЬ ОДИН СПОСІБ:
+   # values: |         # ← вставити ваші overrides тут (Варіант A)
+   #  ...
+   # valueFiles:        # ← або посилання на файл у вашому Git (Варіант B)
+   #  - values/<file>.yaml
+   values:
+     service:
+       type: ClusterIP
+       port: 5000
+       
+    # Залишаємо локальне сховище артефактів у контейнері (неперсистентне)
+    defaultArtifactRoot: file:///mlruns    
+    auth:
+      enabled: false
+    
+    # Вбудована БД PostgreSQL (без диску)
+    postgresql:
+      enabled: true
+      primary:
+        persistence:
+          enabled: false
+      auth:
+        postgresPassword: mlflowpass
+        username: mlflow
+        password: mlflowpass
+        database: mlflowdb
+        
+    # Вбудоване S3-сховище (MinIO) 
+    minio:
+      enabled: true
+      persistence:
+        enabled: false
+    
+    
+    # MLflow Tracking Server (логи/артефакти не зберігатимуться між рестартами)
+    tracking:
+      persistence:
+        enabled: false
+    
