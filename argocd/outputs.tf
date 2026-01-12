@@ -1,4 +1,4 @@
 output "argocd_server" {
   description = "ArgoCD server service"
-  value       = "kubectl port-forward svc/argocd-server -n infra-tools 8080:443"
+  value       = kubernetes_namespace.argo.metadata[0].name
 }
