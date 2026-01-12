@@ -6,7 +6,7 @@ metadata:
 spec:
  project: default
  source:
-  repoURL: oci://registry-1.docker.io/bitnamicharts/mlflow   # з ArtifactHub або GitHub Helm repo
+  repoURL: registry-1.docker.io/bitnamicharts   # з ArtifactHub або GitHub Helm repo
   chart: mlflow      # назва чарту
   targetRevision: 5.1.17
   helm:
