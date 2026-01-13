@@ -53,7 +53,7 @@ resource "kubernetes_manifest" "namespaces_appset" {
     git = {
      repoURL   = var.app_repo_url
      revision  = var.app_repo_branch
-     directories = [{ path = "namespace/*" }]
+     directories = [{ path = "namespaces/*" }]
     }
    }]
    template = {
