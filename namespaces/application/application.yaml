@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://community-charts.github.io/helm-charts
+    repoURL: community-charts.github.io
     chart: mlflow
-    targetRevision: 0.1.10
+    targetRevision: 1.8.1
     helm:
       values: |
         service:
