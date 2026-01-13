@@ -9,8 +9,8 @@ cd argocd
 
 #cd..
 ```
-kubectl create namespace infra-tools
-kubectl apply -n infra-tools -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+#kubectl create namespace infra-tools
+#kubectl apply -n infra-tools -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 ## Deploy ArgoCD with terraform:
 ```
